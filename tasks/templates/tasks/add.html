@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>To-Do List</title>
-    </head>
-    <body>
-        <h1>Add Task</h1>
-        <form action="">
-            <input type="text" name="task">
-            <input type="submit">
-        </form>
-
-    </body>
-</html>
+{% extends "layout.html" %}
+{% block body %}
+    <a href="{% url 'tasks:index' %}">Back to List</a>
+    <h1>Add Task</h1>
+    <form action="{% url 'tasks:add' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="task">
+        <input type="submit">
+    </form>
+{% endblock %}
