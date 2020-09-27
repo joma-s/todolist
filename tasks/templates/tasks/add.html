@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
-    <a href="{% url 'tasks:index' %}">Back to List</a>
+    <a href="{% url 'tasks:index' %}">Back to List</a>    
     <h1>Add Task</h1>
     <form action="{% url 'tasks:add' %}" method="post">
         {% csrf_token %}
